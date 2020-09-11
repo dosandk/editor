@@ -1,0 +1,15 @@
+include ~bemto.pug/lib/index
+
++b
+    +b.tasks-layout__nav-panel
+        +b.tabs
+            +e.container(data-element="tabsNavigation")
+                each tab in tabs
+                    +e('a').tab(class = tab === activeTab ? "active" : "")(data-panel=tab)=tab
+            +e.btns
+                +e('button').btn.__btn-toggle.button._unstyled.is-horizontal-panel(data-element="toggleBtn")
+
+    +b.tabs-content(data-element="tabsContent")
+        each tab in tabs
+            +b.tab-content._has-indents(class = tab === activeTab ? "active" : "")(data-id=tab)
+                //+b(data-id=tab) Some text here

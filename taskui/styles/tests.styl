@@ -1,0 +1,77 @@
+.test
+  display flex
+  flex-direction column
+  background-color #f5f2f0
+  border-bottom 1px solid #e4e4e4
+
+  &:hover,
+  &&_opened
+    background-color #efeae7
+
+  &:hover &__content:before
+    opacity 1
+
+  &&_opened &__content:before,
+  &&_opened:hover &__content:before
+    display block
+    transform rotate(270deg) translate(0, 0)
+    top 10px
+    opacity 1
+
+  &&_opened &__info
+    height auto
+
+  &&_failed
+    color #b44d4d
+
+  &&_success
+    color #5ba059
+
+  &__content
+    display flex
+    flex-direction row
+    align-items center
+    padding 10px 14px
+    cursor pointer
+    position relative
+
+    &:before
+      content '\E807'
+      font-family 'FontIcons'
+      -webkit-font-smoothing antialiased
+      color #bdbdbd
+      font-size 24px
+      position absolute
+      top 50%
+      right 16px
+      transform rotate(90deg) translate(calc(-50% - 3px), 0)
+      opacity 0
+
+  &__status
+    flex 0 0 auto
+    margin-right 8px
+    display flex
+
+  &__name
+    flex 1 1 auto
+
+  &__info
+    height 0
+    overflow hidden
+
+  &__info-box
+    margin 0 24px 0 42px
+    padding 16px
+    background #ffffff
+    border-radius 4px
+    font-size 14px
+    line-height 24px
+
+    &:last-child
+      margin-bottom 30px
+
+    &&_code
+        color initial
+
+  &__info-box + &__info-box
+    margin-top 12px

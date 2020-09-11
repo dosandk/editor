@@ -1,0 +1,59 @@
+.tasks-layout
+  height 100%
+  display flex
+  flex-direction column
+
+  &__splitter
+    width 1px
+    flex 0 0 1px
+    cursor col-resize
+    background-color #c4c4c4
+    position relative
+
+    &:after
+      content ''
+      position absolute
+      top 0
+      bottom 0
+      left 0
+      transform translate(-1px, 0)
+      width 3px
+      background-color #919191
+      opacity 0
+
+    &:hover:after
+      opacity 1
+
+  &__main
+    display flex
+    flex-direction row
+    flex-grow 1
+    margin 0
+    padding 0
+    max-height calc(100vh - 47px) // content without top-bar
+
+  &__col
+    overflow auto
+    min-height min-content
+
+  &__content
+    width 60%
+    min-width 300px
+    flex 1 1 auto
+    display flex
+    flex-direction column
+
+  &__aside
+    width 40%
+    min-width 300px
+    flex 0 0 auto
+    transition width 0.1s linear
+    display flex
+    flex-direction column
+
+  &__editor
+    flex-grow 1
+    overflow auto
+    min-height 0
+    background #f5f2f0
+

@@ -1,0 +1,41 @@
+//extends /layouts/html
+
+//block append variables
+//  - let headTitle = "Tasks"
+//  - let header = false
+//  - let layout_main_class = "main_width-limit-wide"
+//  - let footer = false
+
+//block append head
+//    !=css('taskui')
+//    !=js('taskui', {defer: true})
+//    script window.TASK = !{escapeJSON(task)}
+//    script window.PREVIEW_WORKER_URL = !{escapeJSON(previewWorkerUrl)}
+//    script window.TEST_ENVIRONMENT_SCRIPT_URL = !{escapeJSON(pack("previewTestEnvironment", "js"))}
+
+include ~bemto.pug/lib/index
+
+block body
+    +b.tasks-layout.taskui
+        +e(data-element="topPanel")
+
+        +e.main(data-element="main")
+
+            +e.col.__content(data-element="content")
+                +e.nav-panel
+                    +b.tabs
+                        +e.container
+                            +e('a').tab.active(data-element='solution') Solution
+                        +e.btns
+                            +e('button').btn.__btn-tests Run tests
+
+                // TODO: add ability to select tab
+                +e.editor(data-element="editor")
+                    +b.tabs-content
+                        +b.tab-content.active
+
+                +e.console._open(data-element="output")
+
+            +e.splitter(data-element="resizer")
+
+            +e.col.__aside(data-element="asidePanel")

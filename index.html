@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+  class ColumnChart {
+    element; // HTMLElement;
+
+    constructor(obj = {}) {
+      this.data = obj.data || [];
+      this.label = obj.label || 'label';
+      this.value = obj.value || 'value';
+      this.link = obj.link || 'link';
+
+      this.render();
+      this.initEventListeners();
+      this.renderLink();
+    }
+
+    initEventListeners() {}
+
+    render() {
+      const element = document.createElement("div");
+      element.className = "column-chart"
+      element.innerHTML = `
+    <div class="column-chart__title">
+    Total orders
+    <a href="/sales" class="column-chart__link">View all</a>
+  </div>
+  <div class="column-chart__container">
+    <div class="column-chart__header">344</div>
+    <div class="column-chart__chart">
+      <div style="--value:28" data-tooltip="<div><small>15 янв. 2020 г.</small></div><strong>11</strong>"></div>
+      <div style="--value:28" data-tooltip="<div><small>16 янв. 2020 г.</small></div><strong>11</strong>"></div>
+      <div style="--value:23" data-tooltip="<div><small>17 янв. 2020 г.</small></div><strong>9</strong>"></div>
+      <div style="--value:7" data-tooltip="<div><small>18 янв. 2020 г.</small></div><strong>3</strong>"></div>
+      <div style="--value:34" data-tooltip="<div><small>19 янв. 2020 г.</small></div><strong>13</strong>"></div>
+      <div style="--value:36" data-tooltip="<div><small>20 янв. 2020 г.</small></div><strong>14</strong>"></div>
+      <div style="--value:39" data-tooltip="<div><small>21 янв. 2020 г.</small></div><strong>15</strong>"></div>
+      <div style="--value:7" data-tooltip="<div><small>22 янв. 2020 г.</small></div><strong>3</strong>"></div>
+      <div style="--value:34" data-tooltip="<div><small>23 янв. 2020 г.</small></div><strong>13</strong>"></div>
+      <div style="--value:42" data-tooltip="<div><small>24 янв. 2020 г.</small></div><strong>16</strong>"></div>
+      <div style="--value:42" data-tooltip="<div><small>25 янв. 2020 г.</small></div><strong>16</strong>"></div>
+      <div style="--value:7" data-tooltip="<div><small>26 янв. 2020 г.</small></div><strong>3</strong>"></div>
+      <div style="--value:31" data-tooltip="<div><small>27 янв. 2020 г.</small></div><strong>12</strong>"></div>
+      <div style="--value:39" data-tooltip="<div><small>28 янв. 2020 г.</small></div><strong>15</strong>"></div>
+      <div style="--value:36" data-tooltip="<div><small>29 янв. 2020 г.</small></div><strong>14</strong>"></div>
+      <div style="--value:18" data-tooltip="<div><small>30 янв. 2020 г.</small></div><strong>7</strong>"></div>
+      <div style="--value:15" data-tooltip="<div><small>31 янв. 2020 г.</small></div><strong>6</strong>"></div>
+      <div style="--value:34" data-tooltip="<div><small>1 февр. 2020 г.</small></div><strong>13</strong>"></div>
+      <div style="--value:34" data-tooltip="<div><small>2 февр. 2020 г.</small></div><strong>13</strong>"></div>
+      <div style="--value:36" data-tooltip="<div><small>3 февр. 2020 г.</small></div><strong>14</strong>"></div>
+      <div style="--value:5" data-tooltip="<div><small>4 февр. 2020 г.</small></div><strong>2</strong>"></div>
+      <div style="--value:34" data-tooltip="<div><small>5 февр. 2020 г.</small></div><strong>13</strong>"></div>
+      <div style="--value:42" data-tooltip="<div><small>6 февр. 2020 г.</small></div><strong>16</strong>"></div>
+      <div style="--value:44" data-tooltip="<div><small>7 февр. 2020 г.</small></div><strong>17</strong>"></div>
+      <div style="--value:5" data-tooltip="<div><small>8 февр. 2020 г.</small></div><strong>2</strong>"></div>
+      <div style="--value:42" data-tooltip="<div><small>9 февр. 2020 г.</small></div><strong>16</strong>"></div>
+      <div style="--value:50" data-tooltip="<div><small>10 февр. 2020 г.</small></div><strong>19</strong>"></div>
+      <div style="--value:34" data-tooltip="<div><small>11 февр. 2020 г.</small></div><strong>13</strong>"></div>
+      <div style="--value:15" data-tooltip="<div><small>12 февр. 2020 г.</small></div><strong>6</strong>"></div>
+      <div style="--value:50" data-tooltip="<div><small>13 февр. 2020 г.</small></div><strong>19</strong>" class=""></div>
+    </div>
+  </div>
+  `;
+      this.element = element;
+    }
+
+    renderLink() {
+      const linkMarkup = `<a href="/sales" class="column-chart__link">View all</a>`;
+
+      if (this.link) {
+        const mainWrapper = document.getElementById(`${this.label}`);
+        console.log(mainWrapper);
+        console.log(mainWrapper.getElementsByClassName('column-chart__title'));
+        //   mainWrapper.querySelector(".column-chart__title").insertAdjacentHTML("beforeend", linkMarkup);
+      }
+    }
+
+    remove() {
+      this.element.remove();
+    }
+
+    destroy() {
+      this.remove();
+      // additionally needed to remove all listeners...
+    }
+  }
+
+  const columnChart = new ColumnChart();
+  // const element = document.getElementById('orders');
+
+  // element.append(defaultComponent.element);
+
+</script>
+</body>
+</html>

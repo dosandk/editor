@@ -1,0 +1,16 @@
+include ~bemto.pug/lib/index
+
+// TODO: how to pass "tasks-layout" name inside this template?
++b
+  +b.tasks-layout__nav-panel
+    +b.tabs
+      +e.container
+        +e('a').tab.active(data-id='output') Output
+      +e.btns
+        +e('button').btn.__btn-toggle.button._unstyled.is-vertical-panel(data-element="toggleBtn")
+  +b.tabs-content
+    +b.tab-content.active
+      +b.console-editor
+        +b.console-command-line
+          +e.arrow
+          +e('textarea').input

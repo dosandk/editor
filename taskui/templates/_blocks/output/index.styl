@@ -1,0 +1,51 @@
+.tasks-layout
+  &__console
+    .tabs__btn-toggle
+      transform rotate(-90deg)
+      margin 4px
+
+    &&_open .tabs__btn-toggle
+        transform rotate(90deg)
+
+    &&_open .tabs-content
+        height 216px
+        overflow-y auto
+
+  &__console .tabs-content
+    height 0
+    overflow hidden
+    transition height 0.1s linear
+
+
+.console-command-line
+  background rgba(255,255,255,0.1)
+  padding 16px
+  display flex
+  flex-shrink 0
+
+  &__arrow
+    display flex
+    align-items flex-start
+    position relative
+    font inherit
+    font-weight 400
+    font-size 24px
+
+    &:before
+      content '\E807'
+      font-family 'FontIcons'
+      -webkit-font-smoothing antialiased
+      color #828282
+
+  &__input
+    background none
+    flex 1
+    border 0
+    padding 4px 0 8px 8px
+    resize none
+    overflow hidden
+    min-height 216px
+    outline 0
+    cursor text
+    white-space pre-wrap
+    overflow-wrap break-word

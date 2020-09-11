@@ -1,0 +1,60 @@
+include ~bemto.pug/lib/index
+
++b.tests-result(data-element="testResult")
+  +b.test._failed
+    +e.content
+      +e('span').status
+        +e('img')(src='/icons/failed-test-icon.svg' alt='failed test icon')
+      +e.name= "Info about failed test"
+    +e.info
+      +e.info-box
+        +e= "at r.<anonymous> (test.js:9:12)"
+        +e= "at s.run (https://ru.js.cx/test/libs.js:6:39675)"
+        +e= "at h.runTest (https://ru.js.cx/test/libs.js:6:45245)"
+        +e= "at https://ru.js.cx/test/libs.js:6:46107"
+        +e= "at r (https://ru.js.cx/test/libs.js:6:44557)"
+        +e= "at https://ru.js.cx/test/libs.js:6:44626"
+        +e= "at r (https://ru.js.cx/test/libs.js:6:44032)"
+        +e= "at https://ru.js.cx/test/libs.js:6:44444"
+        +e= "at c (https://ru.js.cx/test/libs.js:6:1064)"
+      +e.info-box._code= "Code of test"
+  +b.test._success
+    +e.content
+      +e('span').status
+        +e('img')(src='/icons/success-test-icon.svg' alt='failed test icon')
+      +e.name= "Info about success test"
+    +e.info
+      +e.info-box= "Info about success test"
+      +e.info-box._code= "The code of test"
+  +b.test._failed
+    +e.content
+      +e('span').status
+        +e('img')(src='/icons/failed-test-icon.svg' alt='failed test icon')
+      +e.name= "Info about failed test"
+    +e.info
+      +e.info-box= "Info about failed test"
+      +e.info-box._code= "The code of test"
+  +b.test._success
+    +e.content
+      +e('span').status
+        +e('img')(src='/icons/success-test-icon.svg' alt='failed test icon')
+      +e.name= "Info about success test"
+    +e.info
+      +e.info-box= "Info about success test"
+      +e.info-box._code= "The code of test"
+  +b.test._failed
+    +e.content
+      +e('span').status
+        +e('img')(src='/icons/failed-test-icon.svg' alt='failed test icon')
+      +e.name= "Info about failed test"
+    +e.info
+      +e.info-box= "Info about failed test"
+      +e.info-box._code= "The code of test"
+  +b.test._success
+    +e.content
+      +e('span').status
+        +e('img')(src='/icons/success-test-icon.svg' alt='failed test icon')
+      +e.name= "Info about success test"
+    +e.info
+      +e.info-box= "Info about success test"
+      +e.info-box._code= "The code of test"

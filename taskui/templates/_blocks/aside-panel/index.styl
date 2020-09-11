@@ -1,0 +1,39 @@
+.tasks-layout
+
+  &__nav-panel
+    min-height 40px
+    padding 0 12px 0 16px
+    background-color #dcdad7
+    display flex
+    align-items center
+
+    .tabs
+      flex-grow 1
+
+  &__aside
+    .tabs-content
+      flex-grow 1
+
+    .tabs_rotate .tabs__container
+      display none
+      transform rotate(-90deg)
+      transform-origin top right
+      position fixed
+      top 100px
+      right 37px
+
+    &_open
+      width 40px
+      min-width 40px
+
+      .tabs__btn-toggle
+        transform rotate(180deg)
+
+      .tabs_rotate .tabs__container
+        display flex !important
+
+      .tabs-content
+        background-color #dcdad7
+
+        > *
+          display none

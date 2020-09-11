@@ -1,0 +1,137 @@
+.tabs
+  margin 0
+  display flex
+  flex-wrap nowrap
+  justify-content space-between
+  overflow-x auto
+  overflow-y hidden
+  scrollbar-width none
+  -ms-overflow-style -ms-autohiding-scrollbar
+  -webkit-overflow-scrolling touch
+
+  &::-webkit-scrollbar
+    width 0
+    height 0
+
+  &::-webkit-scrollbar-track
+    display none
+
+  > *
+    flex 0 0 auto
+
+  &__container
+    display flex
+
+  &__tab
+    color #333333
+    padding 8px
+    text-decoration none
+    cursor pointer
+
+    &:hover,
+    &:visited
+      text-decoration none
+      color color-grey-60
+
+  &__tab.active
+    color inherit
+    border-bottom 2px solid color-red-accent
+    margin-bottom -1px
+
+  a:hover
+    color darken(color-grey-60, 30%)
+
+  &__btns
+    display flex
+    flex-direction row
+    align-items center
+
+  &__btn
+    margin-left 16px
+    position relative
+    display flex
+    transition all 0.3s
+    color #333333
+    font inherit
+    font-size 14px
+    line-height 24px
+    font-weight 400
+
+    &:first-child
+      margin-left 0
+
+    &:hover
+      opacity 0.6
+
+    svg, img
+      margin-right 8px
+
+    svg
+      stroke #828282
+
+    span
+      font-size 14px
+      line-height 24px
+      font-weight 400
+
+  &__btn-toggle:before
+    content '\E807'
+    font-family 'FontIcons'
+    -webkit-font-smoothing antialiased
+    color #828282
+    font-size 24px
+
+  &__btn-tests
+    background-color #ffffff
+    border-radius 8px
+    //border 1px solid #c4c4c4
+    padding 2px 8px
+    position relative
+    height 28px
+    display flex
+    justify-content center
+    align-items center
+    cursor pointer
+    border none
+    outline none
+
+    &:before
+      content ''
+      height 0
+      width 0
+      padding 0
+      margin 0
+      border 5px solid transparent
+      border-left 5px solid #828282
+      margin-right 3px
+
+    &:hover
+      opacity 1
+      background-color rgba(255, 255, 255, 0.6)
+
+.tabs-content
+  overflow hidden
+
+.tab-content
+  overflow-y auto
+  display none
+
+  &.active
+    display block
+
+  &_has-indents
+    padding 22px 24px
+
+  &__placeholder
+    height 424px
+    background-color #e0e0e0
+    display flex
+    flex-direction column
+    align-items center
+    justify-content center
+
+  &__placeholder-title
+    font-weight 400
+    font-size 30px
+    line-height 22px
+    color #828282

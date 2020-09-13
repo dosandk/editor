@@ -4,10 +4,9 @@ const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
 
 module.exports = {
   mode: "development",
-  devtool: 'cheap-source-map',
   entry: [
-    "lodash.debounce",
     "monaco-editor",
+    "lodash.debounce",
   ],
   output: {
     filename: "vendor.[hash].dll.js", // best use [fullhash] here too
@@ -39,14 +38,14 @@ module.exports = {
     ]
   },
   plugins: [
-    new MonacoWebpackPlugin({
-      languages: ['javascript', 'html', 'css'],
-    }),
     new webpack.DllPlugin({
       // Keep the name consistent with output.library
       name: "dll",
       format: true,
       path: path.join(__dirname, '../manifest/vendor-manifest.json'),
+    }),
+    new MonacoWebpackPlugin({
+      languages: ['javascript', 'typescript', 'html', 'css'],
     }),
   ]
 };

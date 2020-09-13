@@ -1,5 +1,5 @@
 // if shipping only a subset of the features & languages is desired
-import * as monaco from 'monaco-editor/esm/vs/editor/editor.api';
+import * as monaco from 'monaco-editor';
 import {Linter} from 'eslint/lib/linter/linter';
 import eslintConfig from './eslint-config.js';
 import debounce from 'lodash.debounce';

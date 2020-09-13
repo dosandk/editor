@@ -41,6 +41,6 @@ module.exports = merge(common, {
       {
         filepath: path.join(__dirname, '../dist/vendor.*.dll.js'),
       },
-    ]),
+    ])
   ]
 });
